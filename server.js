@@ -8,7 +8,8 @@ var url = require("url");
 
 function Server(config){
 
-	var bind = config.bind||[{host:"*",port:8080}];
+	var port = config.port||80;
+	var host = config.host||"*";
 	var procedure = config.procedure||{};
 
 	var server = http.createServer(function(request,response){
@@ -72,9 +73,7 @@ function Server(config){
 		}
 	});
 
-	for(var i=0; i<bind.length; i++){
-		server.listen(bind[i].port,bind[i].host);
-	}
+	server.listen(port,host);
 }
 
 module.exports = Server;

@@ -1,2 +1,5 @@
-I'm a Programmer.
-����һ������Ա��
+﻿I'm a Programmer.
+我是一个程序员。
+
+Hello, World!
+你好，世界！

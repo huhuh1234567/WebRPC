@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>DEMO AJAX</title>
+	<script type="text/javascript" src="ajax.js"></script>
+</head>
+<body>
+<div>
+	<input id="text-echo" type="text">
+	<input id="button-echo" type="button" value="ECHO">
+</div>
+<div>
+	<input id="text-value" type="text">
+	<input id="button-sqrt" type="button" value="SQRT">
+</div>
+<script type="text/javascript">
+	var txtEcho = document.getElementById("text-echo");
+	var btnEcho = document.getElementById("button-echo");
+	var txtValue = document.getElementById("text-value");
+	var btnSQRT = document.getElementById("button-sqrt");
+	var url = "http://127.0.0.1:8080";
+	btnEcho.onclick = function(){
+		WebRPC.ajax(url+"/echo",txtEcho.value,function(rst){
+			alert(rst);
+		});
+	};
+	btnSQRT.onclick = function(){
+		WebRPC.ajax(url+"/sqrt",parseInt(txtValue.value),function(rst){
+			alert(rst);
+		},function(code,error){
+			alert("HTTP "+code+": "+error);
+		});
+	};
+</script>
+</body>
+</html>

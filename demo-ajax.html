@@ -21,12 +21,12 @@
 	var btnSQRT = document.getElementById("button-sqrt");
 	var url = "http://127.0.0.1:8080";
 	btnEcho.onclick = function(){
-		WebRPC.ajax(url+"/echo",txtEcho.value,function(rst){
+		RPC.ajax(url+"/echo",txtEcho.value,function(rst){
 			alert(rst);
 		});
 	};
 	btnSQRT.onclick = function(){
-		WebRPC.ajax(url+"/sqrt",parseInt(txtValue.value),function(rst){
+		RPC.ajax(url+"/sqrt",parseInt(txtValue.value),function(rst){
 			alert(rst);
 		},function(code,error){
 			alert("HTTP "+code+": "+error);

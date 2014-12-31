@@ -1,8 +1,8 @@
 (function(){
 
-	window.WebRPC = window.WebRPC||{};
+	window.RPC = window.RPC||{};
 
-	WebRPC.ajax = function(url,data,successHandler,errorHandler){
+	RPC.ajax = function(url,data,successHandler,errorHandler){
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function(){
 			successHandler&&successHandler(JSON.parse(xhr.responseText));

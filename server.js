@@ -1,6 +1,7 @@
 /**
  * author:	胡剑青 huhuh1234567@126.com
  * date:	2014.12
+ * vm:		node
  */
 
 var http = require("http");

@@ -21,15 +21,27 @@
 	var btnSQRT = document.getElementById("button-sqrt");
 	var url = "http://127.0.0.1:8080";
 	btnEcho.onclick = function(){
-		RPC.ajax(url+"/echo",txtEcho.value,function(rst){
-			alert(rst);
+		RPC.ajax(url+"/echo",txtEcho.value,function(error,rst){
+			if(error){
+				alert("error");
+				console.log(error);
+			}
+			else{
+				alert("success");
+				console.log(rst);
+			}
 		});
 	};
 	btnSQRT.onclick = function(){
-		RPC.ajax(url+"/sqrt",parseInt(txtValue.value),function(rst){
-			alert(rst);
-		},function(code,error){
-			alert("HTTP "+code+": "+error);
+		RPC.ajax(url+"/sqrt",txtValue.value? parseInt(txtValue.value):0,function(error,rst){
+			if(error){
+				alert("error");
+				console.log(error);
+			}
+			else{
+				alert("success");
+				console.log(rst);
+			}
 		});
 	};
 </script>

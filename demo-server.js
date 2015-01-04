@@ -1,3 +1,9 @@
+/**
+ * author:	胡剑青 huhuh1234567@126.com
+ * date:	2014.12
+ * vm:		node
+ */
+
 var Server = require("./Server.js");
 Server({
 	host: "127.0.0.1",
@@ -16,3 +22,4 @@ Server({
 		}
 	}
 });
+console.log("server started");
